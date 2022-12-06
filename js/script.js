@@ -11,13 +11,30 @@
  */
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Template-PWA/sw.js", {
-    scope: "/ICS2O-Template-PWA/",
+  navigator.serviceWorker.register("/ICS2O-Unit5-08-JS/sw.js", {
+    scope: "/ICS2O-Unit5-08-JS/",
   })
 }
 
 // function description
 
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function update() {
+  console.log("update")
+  const first = parseInt(document.getElementById("first").value)
+  console.log("first : " + first)
+  const second = parseInt(document.getElementById("second").value)
+  console.log("second : " + second)
+  let count = 0
+  let answer = first
+
+  while (answer >= second) {
+    console.log("loop")
+    answer = answer - second
+    count = count + 1
+    console.log("count: " + count)
+    console.log("answer: " + answer)
+  }
+
+  document.getElementById("answer").innerHTML = count + "R" + answer
+  console.log("end")
 }
